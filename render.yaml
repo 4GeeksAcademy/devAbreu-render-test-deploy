@@ -4,14 +4,12 @@ services:
     runtime: static
     buildCommand: npm install && npm run build
     staticPublishPath: dist
-    plan: free
 
   - type: web
     name: backend
     runtime: python
     buildCommand: ./render_build.sh
     startCommand: gunicorn wsgi --chdir ./src/
-    plan: free
     envVars:
       - key: VITE_BASENAME
         value: /
