@@ -4,7 +4,6 @@ import {
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-    base: '/', // o '/subruta/' si aplicara
     plugins: [react()],
     server: {
         port: 3000
