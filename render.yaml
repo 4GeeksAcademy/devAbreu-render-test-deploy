@@ -1,14 +1,14 @@
 services:
-  - type: static
+  - type: web
     name: frontend
-    env: static
+    runtime: static
     buildCommand: npm install && npm run build
     staticPublishPath: dist
     plan: free
 
   - type: web
     name: backend
-    env: python
+    runtime: python
     buildCommand: ./render_build.sh
     startCommand: gunicorn wsgi --chdir ./src/
     plan: free
